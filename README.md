@@ -11,7 +11,7 @@ argon2 and bcrypt requieres installation of modules via luarocks
 
 ```bash
 $ luarocks install argon2
-$ luarocks install argon2
+$ luarocks install bcrypt
 ```
 
 All required configuration must be set in ngnix configuration.
