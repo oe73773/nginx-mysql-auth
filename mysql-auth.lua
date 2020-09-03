@@ -20,7 +20,7 @@ local mysqlcache = ngx.shared.mysqlcache
 function checkpw(pwhash, password)
     local matchedPW = false
     ngx.log(ngx.NOTICE, string.format("pwhash: %s", pwhash))
-    if string.find(pwhash, '^%$argon2i%$') or string.find(pwhash, '^%$argon2d%$') then
+    if string.find(pwhash, '^%$argon2i%$') or string.find(pwhash, '^%$argon2d%$')  or string.find(pwhash, '^%$argon2id%$') then
         local argon2 = require "argon2"
         ngx.log(ngx.NOTICE, string.format("Got a argon2 password"))
         local ok, err = argon2.verify(pwhash, password)
